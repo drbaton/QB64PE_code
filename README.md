@@ -1,6 +1,6 @@
 folder for my QB64PE projects
 - sub_killer.bas - small game written in QB64PE, on linux Lite - works fine, don't know if it will work on Windows and standard QB64
-- png_to_csv_QB64PE.bas - code for png to csv (matrix: xy values: color) converter, later u can use image as data type in yours programs
-- sub.png - sample image with sprites images for png_to_csv_QB64PE.bas and sub_killer.bas program
+- png_to_csv_QB64PE.bas - code for png to csv (matrix: xy values: color) converter, later u can use date from csv as "Data" type in yours QB64 programs (in 256 color mode)
+- sub.png - sample image with sprites images for png_to_csv_QB64PE.bas program
 
 - feel free to use :D
