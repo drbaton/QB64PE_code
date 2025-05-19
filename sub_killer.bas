@@ -73,11 +73,15 @@ Cls
 Put (80, 35), intro(), PSet
 Play "T128 O0 L4 G O1 L8 C L16 C C L8 C C C D L2 E P4 L8 E L 16 D D L8 D L8 C O0 B O1 L4 C"
 Sleep 3
-
+k = 0
 Do
     Cls
+    ' sea lvl waving
+    k = k + 0.1
+    k_level = 3 * Sin(k)
+
     ' draw sea, sky
-    Line (0, 0)-(640, 65), 15, BF
+    Line (0, 0)-(640, 65 + k_level), 15, BF
     Line (0, 40)-(640, 30), 100, BF
     Line (0, 30)-(640, 20), 101, BF
     Line (0, 20)-(640, 10), 102, BF
@@ -85,7 +89,7 @@ Do
     Line (0, 70)-(640, 330), 178, BF
     ' draw water surface
     For i = 1 To 5
-        Line (0, 65 + i)-(640, 65 + i), 124 + Int(Rnd * 4), BF
+        Line (0, 65 + i + k_level)-(640, 65 + i + k_level), 124 + Int(Rnd * 4), BF
     Next
 
 
@@ -140,10 +144,10 @@ Do
             Select Case i
                 Case 1: ' draw player, check if left or right
                     If spr(i).vx = -3 Then
-                        Put (spr(i).x, spr(i).y), buf_L(), PSet
+                        Put (spr(i).x, spr(i).y + k_level), buf_L(), PSet
                     End If
                     If spr(i).vx = 3 Then
-                        Put (spr(i).x, spr(i).y), buf_R(), PSet
+                        Put (spr(i).x, spr(i).y + k_level), buf_R(), PSet
                     End If
 
                 Case Is > 1: Put (spr(i).x, spr(i).y), buf2(), PSet ' draw enemies
